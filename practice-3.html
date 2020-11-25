@@ -8,21 +8,18 @@
 <body>
     <script>
         'use strict';
-
-        /* const array1 = ['apple', 'banana', 'grape', 'orange'];
-        const array2 = ['cat', 'dog', 'elephant'];
-        const array3 = ['blue', 'red', 'purple', 'orange'];
-        const character = 'a'; */
         
         function customFilter(char, ...arrs) {
             const concatedArray = arrs.flat();
-            const noRepeat = concatedArray.filter((item, index) => concatedArray.indexOf(item) === index);
-                
+            return concatedArray
+            .filter((item, index) => concatedArray.indexOf(item) === index)
+            .filter(item => item.indexOf(char) === -1)
+            .map(item => item.trimEnd());
             }
         
+            console.log(customFilter('a', ['apple  ', 'banana', 'grape' , 'orange'], ['cat ', 'dog   ', 'elephant'], ['blue', 'red', 'purple', 'orange']));
+
         
-        
-        console.log(concatedArray('a', ['apple', 'banana', 'grape', 'orange'], ['cat', 'dog', 'elephant'], ['blue', 'red', 'purple', 'orange']));
     </script>
 </body>
 </html>

@@ -1,15 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
         'use strict';
 
+        const arrayA = ['apple  ', 'banana', 'grape', 'orange'];
+        const arrayB = ['cat ', 'dog   ', 'elephant'];
+        const arrayC = ['blue', 'red', 'purple', 'orange'];
+        const character = 'a';
+        
+        const concatedArray = (char, ...arrs) => arrs.flat();
+        const noRepeat = (char, ...arrs) => arrs.flat().filter((item, index) => arrs.flat().indexOf(item) === index);
+        const noChar = (char, ...arrs) => arrs.flat().filter(item => item.indexOf(char) === -1);
+        const trimElements = (char, ...arrs) =>arrs.flat().map(item => item.trimEnd());
+        
+
+        console.log(concatedArray(character, arrayA, arrayB, arrayC));
+        console.log(noRepeat(character, arrayA, arrayB, arrayC));
+        console.log(noChar(character, arrayA, arrayB, arrayC));
+        console.log(trimElements(character, arrayA, arrayB, arrayC));
 
     </script>
 </body>
+
 </html>
